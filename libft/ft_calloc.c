@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: njulia-c <njulia-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:00:45 by njulia-c          #+#    #+#             */
-/*   Updated: 2024/10/07 11:16:12 by njulia-c         ###   ########.fr       */
+/*   Updated: 2024/10/17 14:02:53 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,4 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_memset(ptr, 0, total_size);
 	return (ptr);
 }
+	

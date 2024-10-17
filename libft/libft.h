@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: njulia-c <njulia-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 20:42:46 by njulia-c          #+#    #+#             */
-/*   Updated: 2024/10/08 17:22:00 by njulia-c         ###   ########.fr       */
+/*   Updated: 2024/10/17 14:01:12 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,13 @@ int				ft_isalpha(int c);
 int				ft_isascii(int c);
 char			*ft_itoa(int nb);
 void			ft_bzero(void *s, size_t len);
+
+typedef struct s_list
+{
+    void *content;
+    struct s_list *next;
+} t_list;
+
+
 
 #endif
