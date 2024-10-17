@@ -13,6 +13,9 @@ SRCS = ft_atoi.c ft_calloc.c ft_isalnum.c ft_toupper.c ft_tolower.c \
 	   ft_memcpy.c ft_memcmp.c ft_memchr.c ft_isprint.c ft_isdigit.c ft_isalnum.c \
 	   ft_isalpha.c ft_isascii.c ft_itoa.c ft_bzero.c
 OBJS = $(SRCS:.c=.o)
+SRCS_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c \
+			 ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 all: $(NAME)
 
@@ -20,11 +23,14 @@ $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+bonus: $(OBJS_BONUS)
+	$(AR) $(NAME) $(OBJS_BONUS)
+
+.PHONY: all clean fclean re bonus
