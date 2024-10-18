@@ -1,0 +1,5 @@
+
+int	validacion(char **strs)
+{
+
+}
