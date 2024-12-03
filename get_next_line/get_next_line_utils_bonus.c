@@ -62,3 +62,19 @@ char	*ft_strcat(char *dest, const char *src)
 	*dest = '\0';
 	return (temp);
 }
+
+// void cleanup_gnl(char **words) 
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (i<1024)
+// 	{
+// 		if(words[i])
+// 		{
+// 			free(words[i]);
+// 			words[i] = NULL;
+// 		}
+// 		i++;
+// 	}
+// }

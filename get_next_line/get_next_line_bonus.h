@@ -23,5 +23,4 @@ char *read_until_enter(int fd, char *words);
 char	*restore_words(char *words);
 
 
-
 #endif
