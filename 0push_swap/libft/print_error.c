@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   print_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: njulia-c <njulia-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 20:17:57 by njulia-c          #+#    #+#             */
-/*   Updated: 2025/02/17 11:29:11 by njulia-c         ###   ########.fr       */
+/*   Created: 2025/02/17 11:37:37 by njulia-c          #+#    #+#             */
+/*   Updated: 2025/02/17 11:42:53 by njulia-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include <stdio.h>
 
-# include "../libft/libft.h"
-# include <limits.h>
+#include "libft.h"
 
-typedef struct d_node
+void	print_error(char *txt, bool exit_statement)
 {
-	int				data;
-	struct d_node	*prev;
-	struct d_node	*next;
-}					t_node;
-
-typedef struct d_list
-{
-	d_node			*head;
-	d_node			*tail;
-	int				size;
-}					t_list;
-
-#endif
+	write(2, txt, ft_strlen(txt));
+	if (exit_statement == true)
+		exit(EXIT_FAILURE);
+}

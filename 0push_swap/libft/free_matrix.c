@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   free_matrix.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: njulia-c <njulia-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 20:17:57 by njulia-c          #+#    #+#             */
-/*   Updated: 2025/02/17 11:29:11 by njulia-c         ###   ########.fr       */
+/*   Created: 2025/02/17 12:40:27 by njulia-c          #+#    #+#             */
+/*   Updated: 2025/02/17 12:43:53 by njulia-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include <stdio.h>
 
-# include "../libft/libft.h"
-# include <limits.h>
+#include "libft.h"
 
-typedef struct d_node
+void	free_matrix(char	**matrix)
 {
-	int				data;
-	struct d_node	*prev;
-	struct d_node	*next;
-}					t_node;
+	size_t	i;
 
-typedef struct d_list
-{
-	d_node			*head;
-	d_node			*tail;
-	int				size;
-}					t_list;
-
-#endif
+	i = 0;
+	if (matrix)
+	{
+		while (matrix && matrix[i])
+		{
+			if (matrix[i] != NULL)
+			{
+				free(matrix[i]);
+				matrix[i] = NULL;
+			}
+			i++;
+		}
+		free(matrix);
+		matrix = NULL;
+	}
+}

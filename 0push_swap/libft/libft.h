@@ -6,7 +6,7 @@
 /*   By: njulia-c <njulia-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 20:42:46 by njulia-c          #+#    #+#             */
-/*   Updated: 2025/01/03 20:18:54 by njulia-c         ###   ########.fr       */
+/*   Updated: 2025/02/17 12:44:14 by njulia-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <limits.h>
 # include <stdarg.h>
+# include <stdbool.h>
 # include <stddef.h>
 # include <stdint.h>
 # include <stdio.h>
@@ -64,6 +65,8 @@ int					ft_putnbr_base(long long nb, const char *base);
 int					ft_putnbr_unsigned(unsigned int nb);
 int					ft_putvoid_hex(void *p);
 int					ft_putnbr(int nb);
+void				print_error(char *txt, bool exit_statement);
+void				free_matrix(char **matrix);
 
 typedef struct s_list
 {

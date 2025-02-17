@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: njulia-c <njulia-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 20:17:57 by njulia-c          #+#    #+#             */
-/*   Updated: 2025/02/17 11:29:11 by njulia-c         ###   ########.fr       */
+/*   Created: 2025/02/17 12:47:06 by njulia-c          #+#    #+#             */
+/*   Updated: 2025/02/17 13:01:23 by njulia-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include <limits.h>
-
-typedef struct d_node
+int64_t	ft_atoll(const char *str)
 {
-	int				data;
-	struct d_node	*prev;
-	struct d_node	*next;
-}					t_node;
+	size_t	i;
+	int32_t	sign;
+	int64_t	out;
 
-typedef struct d_list
-{
-	d_node			*head;
-	d_node			*tail;
-	int				size;
-}					t_list;
-
-#endif
+	i = 0;
+	sign = 1;
+	out = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (ft_isdigit(str[i]))
+		out = (out * 10) + (str[i++] - '0');
+	return (out * sign);
+}
